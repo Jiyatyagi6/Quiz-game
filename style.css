@@ -1,0 +1,69 @@
+body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #f4f4f4;
+    background-image: url('/cricket.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+   
+    
+}
+.quiz-container {
+    background: white;
+    padding: 50px;
+    padding-bottom: 60px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    width: 400px;
+}
+
+#username{
+    padding: 8px;
+    margin: 5px;
+    font-size: 16px;
+    width: 80%;
+}
+
+.hidden {
+    display: none;
+}
+
+button {
+    background-color: #28a745;
+    color: white;
+    border: none;
+    padding: 15px;
+    margin-top: 10px;
+    cursor: pointer;
+    font-size: 16px;
+    width: 100%;
+    border-radius: 5px;
+}
+button:hover {
+    background-color: #133b1c;
+}
+
+#startbutton{
+    padding: 20px;
+    position: relative;
+    top: 40px;
+    width: 80%;
+    border-radius: 5px;
+    font-size: larger;
+}
+
+#question {
+    font-size: 20px;
+    margin-bottom: 20px;
+}
+
+#options button {
+    font-size: 18px;
+    padding: 12px;
+    margin: 5px 0;
+    width: 100%;
+}
