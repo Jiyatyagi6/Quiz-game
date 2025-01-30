@@ -1,0 +1,127 @@
+# Simple user authentication system for the quiz game
+users = {}
+
+print("Welcome to the Ultimate Quiz Challenge!")
+print("NOTE: Make sure to type the correct answer, as spelling mistakes will be marked wrong.")
+
+# Login or Register
+while True:
+    account_choice = input("\nDo you have an account? (yes/no): ").strip().lower()
+
+    if account_choice == "yes":
+        username = input("Enter your username: ").strip()
+        password = input("Enter your password: ").strip()
+
+        if username in users and users[username] == password:
+            print(f"Welcome back, {username}! Let's start the quiz.")
+            break
+        else:
+            print("Oops! Incorrect username or password. Try again.")
+
+    elif account_choice == "no":
+        new_username = input("Choose a username: ").strip()
+        new_password = input("Set a password: ").strip()
+
+        if new_username in users:
+            print("That username is already taken! Try a different one.")
+        else:
+            users[new_username] = new_password
+            print("Your account has been created! Now, log in to start the quiz.")
+
+    else:
+        print("Please enter 'yes' or 'no'.")
+
+# Quiz starts here
+score = 0
+question_count = 0
+
+play_choice = input("\nReady to play the quiz? (yes/no): ").strip().lower()
+if play_choice == "yes":
+    
+    # Question 1
+    question_count += 1
+    print(f"\n{question_count}. What does CPU stand for?")
+    print("a) Central Processing Unit")
+    print("b) Central Program Unit")
+    print("c) Computer Processing Unit")
+    print("d) Central Process Unit")
+    answer = input("Your answer (a/b/c/d): ").strip().lower()
+    if answer == 'a':
+        score += 1
+        print("Correct! Well done.")
+    else:
+        print("Incorrect. The correct answer is: Central Processing Unit.")
+
+    # Question 2
+    question_count += 1
+    print(f"\n{question_count}. What does GPU stand for?")
+    print("a) Graphical Processing Unit")
+    print("b) Graphics Processing Unit")
+    print("c) General Processing Unit")
+    print("d) Graphical Process Unit")
+    answer = input("Your answer (a/b/c/d): ").strip().lower()
+    if answer == 'b':
+        score += 1
+        print("Nice! That's right.")
+    else:
+        print("Incorrect. The correct answer is: Graphics Processing Unit.")
+
+    # Question 3
+    question_count += 1
+    print(f"\n{question_count}. What does RAM stand for?")
+    print("a) Random Access Memory")
+    print("b) Read Access Memory")
+    print("c) Random Available Memory")
+    print("d) Real-time Access Memory")
+    answer = input("Your answer (a/b/c/d): ").strip().lower()
+    if answer == 'a':
+        score += 1
+        print("Correct! You're on a roll.")
+    else:
+        print("Incorrect. The correct answer is: Random Access Memory.")
+
+    # Question 4
+    question_count += 1
+    print(f"\n{question_count}. What does PSU stand for?")
+    print("a) Power Supply Unit")
+    print("b) Power Source Unit")
+    print("c) Primary Supply Unit")
+    print("d) Power Storage Unit")
+    answer = input("Your answer (a/b/c/d): ").strip().lower()
+    if answer == 'a':
+        score += 1
+        print("That's correct!")
+    else:
+        print("Incorrect. The correct answer is: Power Supply Unit.")
+
+    # Question 5
+    question_count += 1
+    print(f"\n{question_count}. What does ROM stand for?")
+    print("a) Read Only Memory")
+    print("b) Read Original Memory")
+    print("c) Random Only Memory")
+    print("d) Readable Only Memory")
+    answer = input("Your answer (a/b/c/d): ").strip().lower()
+    if answer == 'a':
+        score += 1
+        print("Awesome! You got it.")
+    else:
+        print("Incorrect. The correct answer is: Read Only Memory.")
+
+else:
+    print("\nNo problem! Maybe next time. Thanks for stopping by.")
+    quit()
+
+# Final Score Calculation
+print("\n--- Quiz Results ---")
+print(f"Total Questions Attempted: {question_count}")
+print(f"Your Score: {score}")
+
+if question_count > 0:
+    accuracy = (score * 100) / question_count
+else:
+    accuracy = 0
+
+print(f"Accuracy: {accuracy:.2f}%")
+
+print("\nThanks for playing! See you next time.")
